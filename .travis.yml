@@ -9,4 +9,4 @@ before_script:
 - composer install --no-interaction
 
 script:
-- phpunit -c . --coverage-text --coverage-html ./coverage --report-useless-tests
+- vendor/bin/phpunit -c . --coverage-text --coverage-html ./coverage --report-useless-tests
