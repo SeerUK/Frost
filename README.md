@@ -1,4 +1,4 @@
-Frost
+Frost ![](https://travis-ci.org/SeerUK/Frost.svg?branch=master)
 =====
 
 A feature toggle decision library for PHP.
