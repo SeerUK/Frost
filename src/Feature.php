@@ -20,7 +20,7 @@ use SeerUK\Frost\Condition\ConditionInterface;
  *
  * @author Elliot Wright <elliot@elliotwright.co>
  */
-final class Feature
+class Feature
 {
     /**
      * @var string

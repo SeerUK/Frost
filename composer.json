@@ -12,7 +12,7 @@
     "autoload": {
         "psr-4": {
             "SeerUK\\Frost\\": "src/",
-            "SeerUK\\Frost\\Tests\\": "test/"
+            "SeerUK\\Frost\\Test\\": "test/"
         },
         "exclude-from-classmap": [
             "test/"
