@@ -29,5 +29,5 @@ $director->addFeatures($features);
 if ($director->isEnabled("example.basic")) {
     echo "Feature 'example.basic' is enabled!\n";
 } else {
-    echo "Feature 'example.basic' is not enabled. Something went wrong!\n";
+    echo "Feature 'example.basic' is not enabled.\n";
 }

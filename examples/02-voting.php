@@ -62,7 +62,7 @@ foreach ($features as $feature) {
     if ($director->isEnabled($feature->getName())) {
         echo "Feature '{$feature->getName()}' is enabled!\n";
     } else {
-        echo "Feature '{$feature->getName()}' is not enabled. Something went wrong!\n";
+        echo "Feature '{$feature->getName()}' is not enabled.\n";
     }
 }
 
