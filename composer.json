@@ -11,7 +11,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "SeerUK\\Frost\\": "src/"
+            "SeerUK\\Frost\\": "src/",
+            "SeerUK\\Frost\\Tests\\": "test/"
         },
         "exclude-from-classmap": [
             "test/"
@@ -21,6 +22,6 @@
         "php": ">= 7.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.3"
+        "phpunit/phpunit": "5.4.x"
     }
 }
