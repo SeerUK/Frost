@@ -11,13 +11,21 @@
  * file that was distributed with this source code.
  */
 
-namespace SeerUK\Frost\Strategy;
+namespace SeerUK\Frost\Condition;
 
 /**
- * StrategyInterface
+ * ConditionInterface
  *
  * @author Elliot Wright <elliot@elliotwright.co>
  */
-interface StrategyInterface
+interface ConditionInterface
 {
+    /**
+     * Provides the result of a condition. Used by the director to decide whether or not a feature
+     * is enabled.
+     *
+     * @param array $context
+     * @return bool
+     */
+    public function resolve(array $context): bool;
 }

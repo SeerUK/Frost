@@ -43,11 +43,18 @@ final class FeatureDirector
      * @param array  $context
      * @return bool
      */
-    public function isEnabled(string $name, array $context): bool
+    public function isEnabled(string $name, array $context = []): bool
     {
-        // @todo
+        $feature = $this->features[$name];
 
-        return false;
+        if (!$feature instanceof Feature) {
+            throw new \RuntimeException(sprintf(
+                "Attempted to resolve feature '%s', but it was not an instance of Feature.",
+                $name
+            ));
+        }
+
+        return $feature->isEnabled($context);
     }
 
     /**
@@ -58,7 +65,7 @@ final class FeatureDirector
      */
     public function addFeature(Feature $feature): FeatureDirector
     {
-        $this->features[] = $feature;
+        $this->features[$feature->getName()] = $feature;
 
         return $this;
     }

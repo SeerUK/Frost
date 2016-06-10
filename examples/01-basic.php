@@ -15,13 +15,19 @@ require __DIR__ . "/../vendor/autoload.php";
 
 use SeerUK\Frost\Feature;
 use SeerUK\Frost\FeatureDirector;
-use SeerUK\Frost\Strategy\MultivariateStrategy;
+use SeerUK\Frost\Condition\CallableCondition;
 
 $features = [
-    new Feature(new MultivariateStrategy(), "example.multivariate")
+    new Feature("example.basic", new CallableCondition(function(): bool {
+        return true;
+    }))
 ];
 
 $director = new FeatureDirector();
 $director->addFeatures($features);
 
-var_dump($director);
+if ($director->isEnabled("example.basic")) {
+    echo "Feature 'example.basic' is enabled!\n";
+} else {
+    echo "Feature 'example.basic' is not enabled. Something went wrong!\n";
+}

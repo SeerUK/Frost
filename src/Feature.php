@@ -13,7 +13,7 @@
 
 namespace SeerUK\Frost;
 
-use SeerUK\Frost\Strategy\StrategyInterface;
+use SeerUK\Frost\Condition\ConditionInterface;
 
 /**
  * Feature
@@ -28,21 +28,21 @@ final class Feature
     private $name;
 
     /**
-     * @var StrategyInterface
+     * @var ConditionInterface
      */
-    private $strategy;
+    private $condition;
 
 
     /**
      * Feature constructor.
      *
-     * @param StrategyInterface $strategy
-     * @param string            $name
+     * @param string             $name
+     * @param ConditionInterface $condition
      */
-    public function __construct(StrategyInterface $strategy, string $name)
+    public function __construct(string $name, ConditionInterface $condition)
     {
         $this->name = $name;
-        $this->strategy = $strategy;
+        $this->condition = $condition;
     }
 
     /**
@@ -58,11 +58,11 @@ final class Feature
     /**
      * Is this feature enabled?
      *
+     * @param array $context
      * @return bool
      */
-    public function isEnabled(): bool
+    public function isEnabled(array $context): bool
     {
-        // @todo
-        return false;
+        return $this->condition->resolve($context);
     }
 }
